@@ -1,0 +1,58 @@
+   " 根据侦测到的不同类型加载对应的插件
+   filetype plugin on
+   " 自动缩进
+   filetype indent on
+
+   " 开启语法高亮功能
+   syntax enable
+   " 允许用指定语法高亮配色方案替换默认方案
+   syntax on
+
+   set nocompatible "禁用vi兼容模式
+   set incsearch "开启增量搜索
+   set ignorecase "搜索忽略大小写
+   set wildmenu "vim命令自动补全
+   set autoread "文件自动更新
+   set gcr=a:block-blinkon0 "禁止光标闪烁
+   set laststatus=2 "总是显示状态栏
+   set ruler "显示光标位置
+   set number "显示行号
+   set cursorline "高亮显示当前行
+   "set cursorcolumn "高亮显示当前列
+   set hlsearch "高亮显示搜索结果
+   set backspace=2 "回退键生效，避免回退键输入时光标移动但字符未删除的情况。
+
+   set rtp+=~/.vim/bundle/Vundle.vim
+   call vundle#begin()
+   " alternatively, pass a path where Vundle should install plugins
+   "call vundle#begin('~/some/path/here')
+
+   " let Vundle manage Vundle, required
+   Plugin 'VundleVim/Vundle.vim'
+   " Plugin 'vim-powerline'
+   Plugin 'tagbar'
+
+   " The following are examples of different formats supported.
+   " Keep Plugin commands between vundle#begin/end.
+   " plugin on GitHub repo
+   " Plugin 'tpope/vim-fugitive'
+   " plugin from http://vim-scripts.org/vim/scripts.html
+   " Plugin 'L9'
+   " Git plugin not hosted on GitHub
+   " Plugin 'git://git.wincent.com/command-t.git'
+   " git repos on your local machine (i.e. when working on your own plugin)
+   " Plugin 'file:///home/gmarik/path/to/plugin'
+   " The sparkup vim script is in a subdirectory of this repo called vim.
+   " Pass the path to set the runtimepath properly.
+   " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+   " Install L9 and avoid a Naming conflict if you've already installed a
+   " different version somewhere else.
+   " Plugin 'ascenator/L9', {'name': 'newL9'}
+
+   " All of your Plugins must be added before the following line
+   call vundle#end()            " required
+
+   set expandtab " 将制表符扩展为空格
+   set tabstop=4 " 制表符占用空格数
+   set shiftwidth=4 " 设置格式化时制表符占用空格数
+   set softtabstop=4 " 让 vim 把连续数量的空格视为一个制表符
